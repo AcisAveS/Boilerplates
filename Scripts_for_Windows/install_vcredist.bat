@@ -4,7 +4,7 @@ cd /d %~dp0
 echo Installing vcredistx86 libraries
 echo ---------
 
-for /f "delims=" %%a in ('dir /b vcredist*x86.exe') do (
+for /f  %%a in ('dir /b vcredist*x86.exe') do (
 
 	echo Installing %%a
 
@@ -29,7 +29,7 @@ if "%PROCESSOR_ARCHITECTURE%"=="AMD64" (
 :CONTINUE
 echo Installing vcredistx64 libraries
 echo ---------
-for /f "delims=" %%a in ('dir /b vcredist*x64.exe') do (
+for /f %%a in ('dir /b vcredist*x64.exe') do (
 
 	echo Installing %%a
 
