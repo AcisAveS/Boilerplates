@@ -50,13 +50,13 @@ for /f "delims==" %%a in ('dir /b *redist*.exe') do (
 	REM Using findstr as a boolean to determine if the file is x86 or x64
 	echo %%a | C:\Windows\System32\findstr.exe /i "x86" > nul
 	if !errorlevel! EQU 0 (
-		ren  %%a vcredist_!visualLibraryName!_x86.exe > nul
+		ren  "%%a" "vcredist_!visualLibraryName!_x86.exe" > nul
 		if !errorlevel! NEQ 0 (
 			echo "The file vcredist_!visualLibraryName!_x86.exe exists in the path; the file %%a can't be renamed."
 		echo "------------------"
 		)
 	) else (
-		ren  %%a vcredist_!visualLibraryName!_x64.exe > nul
+		ren  "%%a" "vcredist_!visualLibraryName!_x64.exe" > nul
 		if !errorlevel! NEQ 0 (
 			echo "The file vcredist_!visualLibraryName!_x64.exe exists in the path; the file %%a can't be renamed."
 			echo "------------------"
